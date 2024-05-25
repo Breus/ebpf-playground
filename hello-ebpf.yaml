@@ -45,6 +45,6 @@ provision:
       
       # keep gp off, self signed cert issue else it'll fail to download
       # or add --no-check-certificate
-      wget --quiet https://golang.org/dl/go1.20.1.linux-arm64.tar.gz
-      tar -C /usr/local -xzf go1.20.1.linux-arm64.tar.gz
-      echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
+      wget --quiet https://golang.org/dl/go1.22.3.linux-arm64.tar.gz
+      tar -C /usr/local -xzf go1.22.3.linux-arm64.tar.gz
+      echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
