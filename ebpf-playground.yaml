@@ -36,4 +36,4 @@ provision:
         echo "Unsupported architecture: $ARCH"
         exit 1
       fi
-      echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+      echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile.d/go.sh
