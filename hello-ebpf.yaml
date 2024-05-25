@@ -43,8 +43,16 @@ provision:
       # need linux-tools for kernel specific
       apt-get install --yes linux-tools-$(uname -r)
       
-      # keep gp off, self signed cert issue else it'll fail to download
-      # or add --no-check-certificate
-      wget --quiet https://golang.org/dl/go1.22.3.linux-arm64.tar.gz
-      tar -C /usr/local -xzf go1.22.3.linux-arm64.tar.gz
+      echo "Installing Go" 
+      ARCH=$(uname -m)
+      if [ "$ARCH" = "x86_64" ]; then
+        wget --quiet https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+        tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
+      elif [ "$ARCH" = "aarch64" ]; then
+        wget --quiet https://go.dev/dl/go1.22.3.linux-arm64.tar.gz
+        tar -C /usr/local -xzf go1.22.3.linux-arm64.tar.gz
+      else
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+      fi
       echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
