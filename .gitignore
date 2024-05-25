@@ -2,3 +2,9 @@
 .idea/
 
 *.iml
+
+# generated bindings
+*_bpf*.go
+*_bpf*.o
+# go binaries
+ebpf-playground

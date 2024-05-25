@@ -1,4 +1,4 @@
-module ebpf-test
+module ebpf-playground
 
 go 1.22.3
 
