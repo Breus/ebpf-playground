@@ -39,6 +39,16 @@ This README guides you to set-up eBPF with Go on MacOS
    2024/05/25 11:50:38 Received 3 packets
    2024/05/25 11:50:39 Received 4 packets
    ```
+8. While `ebpf-playground` is attached you can do any network operation to see it being intercepted by it:
+   ```bash
+   curl https://google.com
+   ```
+   and you will see more packets being intercepted:
+   ```text
+   2024/05/25 11:50:40 Received 7 packets
+   2024/05/25 11:50:41 Received 27 packets
+   2024/05/25 11:50:42 Received 28 packets
+   ```
 
 ## Cleanup
 At the end, make sure to stop and remove the VM using: 
