@@ -18,7 +18,7 @@ This README guides you to set-up eBPF with Go on MacOS
    limactl shell ebpf-playground
    ```
 4. This repository contains the test eBPF program from the guide [Getting Started with eBPF in Go](https://ebpf-go.dev/guides/getting-started/):
-   ```bash
+   ```text
    gen.go
    go.mod
    counter.c
